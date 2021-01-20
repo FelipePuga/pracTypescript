@@ -1,3 +1,4 @@
+export {};
 // Funciones en TypeScript
 // Los parametros en las funciones son tipados
 // Se pueden definir parámetros opcionales
@@ -35,3 +36,30 @@ let createPic = (title: string, date: string, size: SquareSize): object =>{
 
 const picture = createPic('Pugas session', '2020-03-10', '100x100');
 console.log('picture', picture);
+
+//Tipo de retorno con TypeScript
+
+function handleError(code: number, message: string): never | string{
+        //Pocesamiento del codigo, mensaje
+
+        if(message === 'error'){
+            throw new Error(`${message}. Code error: ${code}`)
+        }else{
+            return 'An error has ocurrio un error'
+        }
+}
+
+
+try{
+
+    let result =  handleError(200, 'ok');
+    console.log('result', result);
+    result = handleError(400, 'error');
+    console.log('result', result);
+    console.log('PASE');
+
+}catch (error){
+    
+    console.log("Entre al error");
+
+}

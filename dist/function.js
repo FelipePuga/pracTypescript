@@ -1,8 +1,5 @@
 "use strict";
-// Funciones en TypeScript
-// Los parametros en las funciones son tipados
-// Se pueden definir parámetros opcionales
-// El tipo de retorno puede ser un tipo básico, enum, alias, tipo literal o una combinación de ellos 
+Object.defineProperty(exports, "__esModule", { value: true });
 // Usamos TS, definimos tipos para parametros
 function createPictures(title, date, size) {
     // Se crea la fotografia
@@ -23,3 +20,23 @@ var createPic = function (title, date, size) {
 };
 var picture = createPic('Pugas session', '2020-03-10', '100x100');
 console.log('picture', picture);
+//Tipo de retorno con TypeScript
+function handleError(code, message) {
+    //Pocesamiento del codigo, mensaje
+    if (message === 'error') {
+        throw new Error(message + ". Code error: " + code);
+    }
+    else {
+        return 'An error has ocurrio un error';
+    }
+}
+try {
+    var result = handleError(200, 'ok');
+    console.log('result', result);
+    result = handleError(400, 'error');
+    console.log('result', result);
+    console.log('PASE');
+}
+catch (error) {
+    console.log("Entre al error");
+}
