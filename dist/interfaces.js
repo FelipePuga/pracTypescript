@@ -25,3 +25,27 @@ showPictures({
     date: '2020-03',
     orientation: PhotoOrientation.Portrait,
 });
+function generatePicture(config) {
+    var pic = {
+        title: 'Default', date: '2020-03'
+    };
+    if (config.title) {
+        pic.title = config.title;
+    }
+    if (config.date) {
+        pic.date = config.date;
+    }
+    return pic;
+}
+var picture = generatePicture({});
+console.log('pictures', picture);
+picture = generatePicture({ title: 'TravelPic' });
+console.log('pictures', picture);
+picture = generatePicture({ title: 'TravelPic', date: '2021-05' });
+console.log('pictures', picture);
+var user;
+user = { id: 10, username: 'fpt01', isPro: true };
+console.log('user', user);
+user.username = 'paparazzi';
+// user.id = 20; // Error de compilacion
+console.log('user', user);
